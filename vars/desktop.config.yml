@@ -1,0 +1,18 @@
+---
+base_packages:
+  - firmware-amd-graphics
+  - libgl1-mesa-dri
+  - libglx-mesa0
+  - mesa-vulkan-drivers
+  - xserver-xorg-video-all
+  - xserver-xorg
+  - xserver-xorg-video-amdgpu
+  - lightdm
+  - x11-xserver-utils
+  - radeontop
+  - firmware-iwlwifi
+  - notion
+  - rofi
+  - build-essential
+  - firefox-esr
+  - kitty

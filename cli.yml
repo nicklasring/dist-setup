@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars_files:
+    - ./vars/cli.config.yml
+  roles:
+    - ./roles/cli

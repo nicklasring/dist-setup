@@ -1,0 +1,10 @@
+---
+# tasks file for desktop
+- name: Install Desktop base packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ base_packages }}"
+  become: yes
+
+

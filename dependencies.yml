@@ -1,0 +1,32 @@
+---
+- hosts: all
+  tasks:
+    - name: Add main repository
+      ansible.builtin.apt_repository:
+        repo: deb http://deb.debian.org/debian/ bullseye main contrib non-free
+        state: present
+
+    - name: Add main repository src
+      ansible.builtin.apt_repository:
+        repo: deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
+        state: present
+
+    - name: Add security repository
+      ansible.builtin.apt_repository:
+        repo: deb http://security.debian.org/debian-security bullseye-security main
+        state: present
+
+    - name: Add security repository src
+      ansible.builtin.apt_repository:
+        repo: deb-src http://security.debian.org/debian-security bullseye-security main
+        state: present
+
+    - name: Add update repository
+      ansible.builtin.apt_repository:
+        repo: deb http://deb.debian.org/debian/ bullseye-updates main
+        state: present
+
+    - name: Add update repository src
+      ansible.builtin.apt_repository:
+        repo: deb-src http://deb.debian.org/debian/ bullseye-updates main
+        state: present

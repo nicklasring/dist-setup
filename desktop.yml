@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars_files:
+    - ./vars/desktop.config.yml
+  roles:
+    - ./roles/desktop
