@@ -1,69 +1,18 @@
-!XTerm*faceName: Consolas
-!xterm*faceSize: 12
-XTerm*faceName: xft:Consolas:style=Regular:size=13
-XTerm*vt100*geometry: 80x60
-XTerm*saveLines: 16384
-XTerm*loginShell: true
-XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-XTerm*termName: xterm-color
-XTerm*eightBitInput: false
-XTerm*metaSendsEscape: true
-XTerm*locale: true
-XTerm*utf8: 1
-XTerm*xftAntialias: true
+UXTerm*background:   black
+UXTerm*foreground:   white
+UXTerm*cursorColor:  grey
+UXTerm*faceName:     Liberation Mono
+UXTerm*faceSize:     11
+UXTerm*VT100*translations: #override Shift <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+UXTerm*saveLines: 16384
+UXTerm*loginShell: true
+UXTerm*termName: uxterm
+UXTerm*eightBitInput: false
+UXTerm*metaSendsEscape: true
+UXTerm*locale: true
+UXTerm*utf8: 1
+UXTerm*xftAntialias: true
 
-!BLK Cursor
-#define _color0        #000000
-#define _color8        #4c4c4c
-!RED Tag
-#define _color1        #CD0000
-#define _color9        #FF0000
-!GRN SpecialKey
-#define _color2        #00CD00
-#define _color10       #FFFFFF
-!YEL Keyword
-#define _color3        #CDCD00e
-#define _color11       #FFFF00
-!BLU Number
-#define _color4        #1E90FF
-#define _color12       #4682B4
-!MAG Precondit
-#define _color5        #CD00CD
-#define _color13       #FF00FF
-!CYN Float
-#define _color6        #00CDCD
-#define _color14       #00FFFF
-!WHT Search
-#define _color7        #E5E5E5
-#define _color15       #FFFFFF
-!FMT Include, StatusLine, ErrorMsg
-#define _colorBD       #ffcfaf
-#define _colorUL       #ccdc90
-#define _colorIT       #80d4aa
-!TXT Normal, Normal, Cursor
-#define _foreground    #FFFFFF
-#define _background    #303030
-#define _cursorColor   #FFFFFF
-
-XTerm*color0         : _color0
-XTerm*color1         : _color1
-XTerm*color2         : _color2
-XTerm*color3         : _color3
-XTerm*color4         : _color4
-XTerm*color5         : _color5
-XTerm*color6         : _color6
-XTerm*color7         : _color7
-XTerm*color8         : _color8
-XTerm*color9         : _color9
-XTerm*color10        : _color10
-XTerm*color11        : _color11
-XTerm*color12        : _color12
-XTerm*color13        : _color13
-XTerm*color14        : _color14
-XTerm*color15        : _color15
-XTerm*colorBD        : _colorBD
-XTerm*colorIT        : _colorIT
-XTerm*colorUL        : _colorUL
-XTerm*foreground     : _foreground
-XTerm*background     : _background
-XTerm*cursorColor    : _cursorColor
+Xcursor.theme: Adawaita
+Xcursor.size: 16

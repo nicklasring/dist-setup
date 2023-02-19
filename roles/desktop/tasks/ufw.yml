@@ -1,0 +1,12 @@
+
+
+- name: Enable ufw baserules
+  become: true
+  community.general.ufw:
+    rule: "{{ item.rule }}"
+    direction: "{{ item.direction }}"
+    state: "{{ item.state }}"
+  with_items:
+    - { rule: 'deny', direction: 'in', state: 'enabled' }
+    - { rule: 'allow', direction: 'out', state: 'enabled' }
+  notify: restart ufw

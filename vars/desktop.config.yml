@@ -1,5 +1,6 @@
 ---
 base_packages:
+  - xterm
   - htop
   - iputils-ping
   - inetutils-tools
@@ -9,7 +10,6 @@ base_packages:
   - notion
   - rofi
   - build-essential
-  - kitty
   - lua5.4
   - python3-pynvim
   - ripgrep

@@ -6,6 +6,24 @@
     state: latest
   loop: "{{ base_packages }}"
 
+- name: Install community general collection
+  become: true
+  ansible.builtin.shell: |
+    pip install -Iv 'resolvelib<0.6.0' && \
+    ansible-galaxy collection install community.general
+
+- name: Set up ufw
+  ansible.builtin.include_tasks:
+    file: ufw.yml
+
+- name: Set up shell
+  ansible.builtin.include_tasks:
+    file: shell.yml
+
+- name: Set up x & window manager
+  ansible.builtin.include_tasks:
+    file: x11.yml
+
 - name: Set up vscode
   ansible.builtin.include_tasks:
     file: vscode.yml
@@ -13,14 +31,6 @@
 - name: Set up nvim
   ansible.builtin.include_tasks:
     file: nvim.yml
-
-- name: Set up x & window manager
-  ansible.builtin.include_tasks:
-    file: x11.yml
-
-- name: Set up shell
-  ansible.builtin.include_tasks:
-    file: shell.yml
 
 - name: Set up browsers
   ansible.builtin.include_tasks:

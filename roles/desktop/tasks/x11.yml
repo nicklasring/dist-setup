@@ -19,10 +19,11 @@
     state: absent
     purge: true
 
-- name: Clone notion to .notion config folder
-  ansible.builtin.git:
-    repo: "https://github.com/nicklasring/notion.git"
+- name: Copy notion to .notion config folder
+  ansible.builtin.copy:
+    src: "files/notion"
     dest: "/home/{{ username }}/.notion"
+    directory_mode: true
 
 - name: Set permissions to notion folder
   ansible.builtin.file:
@@ -45,7 +46,7 @@
     owner: "{{ username }}"
     group: "{{ username }}"
 
-- name: Write .xinitrc
+- name: Write .Xmodmap
   ansible.builtin.copy:
     src: "files/Xmodmap"
     dest: "/home/{{ username }}/.Xmodmap"
