@@ -20,6 +20,7 @@ base_packages:
   - virtualbox
   - clamav
   - ufw
+  - maim
 vscode_extensions:
   - rust-lang.rust-analyzer
 username: "nik"
