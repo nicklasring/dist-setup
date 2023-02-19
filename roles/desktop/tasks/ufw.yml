@@ -1,5 +1,3 @@
-
-
 - name: Enable ufw baserules
   become: true
   community.general.ufw:

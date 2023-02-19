@@ -1,5 +1,19 @@
 ---
 # tasks file for desktop
+- name: Update package index
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Upgrade all installed packages
+  ansible.builtin.apt:
+    upgrade: dist
+
+- name: Remove modemmanager shit
+  ansible.builtin.apt:
+    purge: true
+    name: modemmanager
+    state: absent
+
 - name: Install Desktop base packages
   ansible.builtin.package:
     name: "{{ item }}"
