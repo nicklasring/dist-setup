@@ -1,0 +1,53 @@
+- name: Confirm gdm is running
+  ansible.builtin.shell: ps aux | grep gdm | grep -v grep
+  ignore_errors: True
+  register: gdm_process
+
+- name: Shutdown gdm
+  ansible.builtin.command: service gdm stop
+  when: gdm_process.stdout != ""
+
+- name: Remove all gdm
+  ansible.builtin.apt:
+    name: "*gdm*"
+    state: absent
+    purge: true
+
+- name: Remove all gnome
+  ansible.builtin.apt:
+    name: "*gnome*"
+    state: absent
+    purge: true
+
+- name: Clone notion to .notion config folder
+  ansible.builtin.git:
+    repo: "https://github.com/nicklasring/notion.git"
+    dest: "/home/{{ username }}/.notion"
+
+- name: Set permissions to notion folder
+  ansible.builtin.file:
+    dest: "/home/{{ username }}/.notion/"
+    owner: "{{ username }}"
+    group: "{{ username }}" 
+    recurse: true
+
+- name: Write .Xresources
+  ansible.builtin.copy:
+    src: "files/Xresources"
+    dest: "/home/{{ username }}/.Xresources"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Write .xinitrc
+  ansible.builtin.copy:
+    src: "files/xinitrc"
+    dest: "/home/{{ username }}/.xinitrc"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Write .xinitrc
+  ansible.builtin.copy:
+    src: "files/Xmodmap"
+    dest: "/home/{{ username }}/.Xmodmap"
+    owner: "{{ username }}"
+    group: "{{ username }}"

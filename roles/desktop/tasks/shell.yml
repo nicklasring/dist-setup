@@ -1,0 +1,7 @@
+- name: Write .bash_aliases
+  ansible.builtin.copy:
+    src: "files/bash_aliases"
+    dest: "/home/{{ username }}/.bash_aliases"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+

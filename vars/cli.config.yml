@@ -1,7 +1,0 @@
----
-base_packages:
-  - htop
-  - iputils-ping
-  - inetutils-tools
-  - nmap
-  - git

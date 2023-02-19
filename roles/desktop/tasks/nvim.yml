@@ -1,0 +1,28 @@
+- name: Clone nvim to .config folder
+  ansible.builtin.git:
+    repo: "https://github.com/nicklasring/nvim.git"
+    dest: "/home/{{ username }}/.config/nvim"
+    version: "master"
+    clone: yes
+
+- name: Set permissions to nvim folder
+  ansible.builtin.file:
+    dest: "/home/{{ username }}/.config/nvim"
+    owner: "{{ username }}" 
+    group: "{{ username }}" 
+    recurse: true
+
+- name: Download nvim
+  ansible.builtin.get_url:
+    url:  https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+    dest: /tmp/neovim-latest.deb
+    mode: '0440'
+
+- name: Install nvim
+  ansible.builtin.apt:
+    deb: /tmp/neovim-latest.deb
+
+- name: Remove nvim .deb 
+  ansible.builtin.file:
+    path: /tmp/neovim-latest.deb
+    state: absent

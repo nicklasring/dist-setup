@@ -1,18 +1,25 @@
 ---
 base_packages:
-  - firmware-amd-graphics
-  - libgl1-mesa-dri
-  - libglx-mesa0
-  - mesa-vulkan-drivers
-  - xserver-xorg-video-all
-  - xserver-xorg
-  - xserver-xorg-video-amdgpu
-  - lightdm
+  - htop
+  - iputils-ping
+  - inetutils-tools
+  - nmap
+  - git
   - x11-xserver-utils
-  - radeontop
-  - firmware-iwlwifi
   - notion
   - rofi
   - build-essential
-  - firefox-esr
   - kitty
+  - lua5.4
+  - python3-pynvim
+  - ripgrep
+  - xdotool
+  - wget
+  - apt-transport-https
+  - software-properties-common
+  - virtualbox
+  - clamav
+  - ufw
+vscode_extensions:
+  - rust-lang.rust-analyzer
+username: "nik"

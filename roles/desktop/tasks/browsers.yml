@@ -1,0 +1,14 @@
+- name: Download chrome 
+  ansible.builtin.get_url:
+    url:  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest: /tmp/chrome-latest.deb
+    mode: '0440'
+
+- name: Install chrome
+  ansible.builtin.apt:
+    deb: /tmp/chrome-latest.deb
+
+- name: Remove chrome .deb 
+  ansible.builtin.file:
+    path: /tmp/chrome-latest.deb
+    state: absent
