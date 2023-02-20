@@ -49,3 +49,7 @@
 - name: Set up browsers
   ansible.builtin.include_tasks:
     file: browsers.yml
+
+- name: Remove dependencies
+  ansible.builtin.apt:
+    autoremove: yes

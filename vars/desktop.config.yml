@@ -21,6 +21,7 @@ base_packages:
   - clamav
   - ufw
   - maim
+  - openvpn
 vscode_extensions:
   - rust-lang.rust-analyzer
 username: "nik"
