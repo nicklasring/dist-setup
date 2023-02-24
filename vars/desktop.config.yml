@@ -22,6 +22,7 @@ base_packages:
   - ufw
   - maim
   - openvpn
+  - autojump
 vscode_extensions:
   - rust-lang.rust-analyzer
 username: "nik"
