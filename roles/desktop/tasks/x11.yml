@@ -32,6 +32,11 @@
     group: "{{ username }}" 
     recurse: true
 
+- name: Set mode on notion folder
+  ansible.builtin.file:
+    dest: "/home/{{ username }}/.notion/"
+    mode: "0755"
+
 - name: Write .Xresources
   ansible.builtin.copy:
     src: "files/Xresources"
