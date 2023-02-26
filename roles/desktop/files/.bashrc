@@ -88,5 +88,7 @@ if [ -f ~/.bash_aliases_work ]; then
     . ~/.bash_aliases_work
 fi
 
+export EDITOR=nvim
+
 # Load autojump
 . /usr/share/autojump/autojump.bash
