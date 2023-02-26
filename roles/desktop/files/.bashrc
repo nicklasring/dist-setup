@@ -49,7 +49,17 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+    if [ ! -z "$git_branch" ]; then
+        git_unstaged_present=$(git status -s)
+        if [ ! -z "$git_unstaged_present" ]; then
+            RED='\033[0;31m'
+            NC='\033[0m'
+            echo -e "${RED}${git_branch}${NC}"
+            return 0
+        fi
+        echo $git_branch
+    fi
 }
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]$(parse_git_branch):\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -72,6 +82,10 @@ fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_aliases_work ]; then
+    . ~/.bash_aliases_work
 fi
 
 # Load autojump
