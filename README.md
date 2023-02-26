@@ -1,7 +1,5 @@
 # Debian/Ubuntu setup 
 
-Ansible setup for a debian/ubuntu system, the way i like it.
-
 ```
 # Run as root
 ./install.sh
