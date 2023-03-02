@@ -23,6 +23,7 @@ base_packages:
   - maim
   - openvpn
   - autojump
+  - direnv
 vscode_extensions:
   - rust-lang.rust-analyzer
 username: "nik"
